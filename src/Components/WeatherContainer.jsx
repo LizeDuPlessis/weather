@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import WeatherItems from "./WeatherItems";
+import WeatherItems from "./WeatherItems";
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -41,12 +41,12 @@ function WeatherContainer() {
 
   console.log(weather);
   console.log(userSearch);
-
   return (
-    <div>
+    <div className="container">
       <h1>{userSearch}</h1>
-      <form role="search" onSubmit={handleSubmitSearch}>
+      <form className="form-group" role="search" onSubmit={handleSubmitSearch}>
         <input
+          className="input-group"
           type="text"
           placeholder="Search here..."
           name="search"
@@ -56,13 +56,7 @@ function WeatherContainer() {
         />
         <button>Submit</button>
       </form>
-      {/* <WeatherItems weather={weather} /> */}
-      <div>
-        <h3>City: {weather.name}</h3>
-        <h3>Temperature: {weather.main?.temp}</h3>
-        <h3> Humidity: {weather.main?.humidity}</h3>
-        <h3> Wind Speed: {weather.wind?.speed}</h3>
-      </div>
+      <WeatherItems weather={weather} />
     </div>
   );
 }

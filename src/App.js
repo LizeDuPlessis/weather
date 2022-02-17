@@ -8,7 +8,6 @@ function App() {
       <Header />
       <br />
       <WeatherContainer />
-
       <main></main>
     </div>
   );
